@@ -10,6 +10,8 @@ This project runs with a local MySQL database and uses PHP and mysqli so you sho
 
 In the code you can change the name of the DB, username and password to suit your needs.
 
+In the `.php` files you will have to change the username, password, database and table name.
+
 To run a php server use the command `php -S localhost:8000`
 
 Then type `localhost:8000/Website/main.html` on your web browser to run the Website
