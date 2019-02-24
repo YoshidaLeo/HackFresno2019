@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/index.css">
+    </head>
+    <body>
+        <header>
+            <h1>Teacher Tech Finder</h1>
+            <img src="images/TTF.png" width="100" height="100">
+            <search>
+                <input type="text" id="Search"></input>
+                <button onclick=Search()>Search</button>
+            </search>
+        </header>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        
+        <h2>This is a website dedicated to profesors who want to integrate technology into their teaching but do not know how. <br/> 
+            Take a quick survey so that we can help you find what you are looking for. <br/>
+            If you know what you are looking for, just type it into the Search Bar.
+        </h2>
+
+        <section id="selections">
+        </section>
+
+        <script>
+            var res = [];
+            var pos = 0;
+
+            select("Are you new Tech?",["Yes","No"]);
+
+            function select (question,options)
+            {
+                var s = "<br>" + question + "<br><br>";
+                for (var i = 0; i < options.length; i++)
+                {
+                    s += "<input type=\"radio\" name=\"Question\" value=" + i + ">" + options[i] + "</br>";
+                }
+                s += "<br><button onclick=\"Next()\">Next</button>";
+                document.getElementById("selections").innerHTML = s;
+            }
+
+            function Search()
+            {
+                var input = document.getElementById('Search').value;
+                window.location = "php/searchQuery.php?variable=" + input;
+            }
+
+            function Next()
+            {
+                var okcheck = false
+                var radios = document.getElementsByName('Question');
+
+                for (var i = 0; i < radios.length; i++)
+                {
+                    if (radios[i].checked)
+                    {
+                        okcheck = true;
+                        break;
+                    }
+                }
+
+                if (!okcheck)
+                {
+                    return;
+                }
+
+                res.push(parseInt(radios[i].value) + 1);
+                pos++;
+
+                switch(pos)
+                {
+                    case 1:
+                        select("What do you want to do?",["asessing students","empowering students","teaching students"]);
+                    break;
+                    case 2:
+                        select("Enhance ?",["yourself (The Teacher)","your students","both"]);
+                    break;
+                   case 3:
+                        select("Do you want your students to ",["gaining knowladge","applying knowladge","both"]);
+                    break;
+                    case 4:
+                        select("Do we want students to",["work together","work independently"]);
+                    break;
+                    case 5:
+                        select("Want do you think the students would like doing?",["working with video","working with podcast or audio","working with text","working with coding/programming",]);
+                    break;
+                    case 6:
+                        select("Is it ok if you are using a paid service?",["Yes","No"]);
+                    break;
+                    default:
+                        window.location = "php/surveyQuery.php?variable=" + res.join('');
+                }
+                
+            }
+        </script>
+
+    </body>
+</html>
