@@ -26,7 +26,7 @@ def bullshit_data():
     }
     
     phrases = {
-        1:"this technology makes students utilize ", 2:"a large part of using this recource is allowing the students to utilize ", 3:"A recource superb for ", 4:"re-imagining "
+        1:"This technology makes students utilize ", 2:"A large part of using this recource is allowing the students to utilize ", 3:"A recource superb for ", 4:"Re-imagining "
     }
     buzzwords = {
         
@@ -46,13 +46,13 @@ def bullshit_data():
                                 buzzword= buzzwords[select]
                                 phraze = phrases[select]
                                 des = phraze+buzzword
-                                desinit = des
+                          
                                 if j==3:
-                                        des+=phraze+ buzzword+" and allowing you to teach students through collaboration"
+                                        des+=" and allowing you to teach students through collaboration "
                                 if j==2:
-                                        des+=phraze+ buzzword+" and allowing students to leverage technology to enhance their other capabilities in a new way"
+                                        des+=" and allowing students to leverage technology to enhance their other capabilities in a new way "
                                 if j==1:
-                                        des+=phraze+buzzword+" and allowing students to demonstrate knowledge"
+                                        des+=" and allowing students to demonstrate knowledge "
                                 else:
                                     des+=""
                                 if n==1:
@@ -60,7 +60,7 @@ def bullshit_data():
                                 if n==3:
                                     des+=". This technology allows your students use technology to include a textual medium in their education"
                                 if n==2:
-                                    des+=". Allowing students to use audio or podcasts to express themselves and learn new things is picitol to this application"
+                                    des+=". Allowing students to use audio or podcasts to express themselves and learn new things is pivotal to this application"
                                 if n==4:
                                     des+=". Allowing your students to use this platform will teach them about the world of technology and coding"
                                 else: 
@@ -68,7 +68,7 @@ def bullshit_data():
                                 if o==1:
                                     des+= ". Plus it's free!"
                                 else:
-                                    des+= ". It does require a small cost to operate"
+                                    des+= ""
 
                                 number = random.randint(1,5)
                                 selector = random.randint(1,12)
@@ -78,6 +78,5 @@ def bullshit_data():
                                 print "(\"" +name+"\", \""+URL+ "\", "+str((i+1))+str((j+1))+str((k+1))+str((l+1))+str((m+1))+str((n+1))+str((o+1))+", "+str(number)+", \""+des+"\", \""+log+"\"),"
 
 
+bullshit_data();
 
-
-bullshit_data()
