@@ -23,12 +23,12 @@
         die("Connection failed: " . $conn->connect_error);
     } 
     
-    $sql = "SELECT name, url, rating, description FROM example WHERE tags = $where_clause";
+    $sql = "SELECT name, url, rating, description, logo FROM HackFresno WHERE tags = $where_clause";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            echo "<div> <strong>". $row["name"]. "</strong><br/>Website: " . $row["url"] . "<br/>Rating:  ".$row["rating"]. "&#9734"."<br/>Description:  ".$row["description"] ."<div/> <br/><br/>";
+            echo "<div> <strong>". $row["name"]. "</strong><br/><img id=\"logo\" src=". $row["logo"]." width=75 height=75><br>Website: " . $row["url"] . "<br/>Rating:  ".$row["rating"]. "&#9734"."<br/>Description:  ".$row["description"] ."<div/> <br/><br/>";
         }
     } else {
         echo "0 results";

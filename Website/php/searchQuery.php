@@ -23,7 +23,7 @@
         die("Connection failed: " . $conn->connect_error);
     } 
     
-    $sql = "SELECT name, url, tags, rating FROM example WHERE (tags = $where_clause) OR (name = $where_clause) OR (url = $where_clause) OR (rating = $where_clause)";
+    $sql = "SELECT name, url, tags, rating FROM HackFresno WHERE (tags = $where_clause) OR (name = $where_clause) OR (url = $where_clause) OR (rating = $where_clause)";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {

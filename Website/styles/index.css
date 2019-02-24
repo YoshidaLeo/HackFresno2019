@@ -71,3 +71,9 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+#logo {
+    display: block;
+    margin-left: 5px;
+    margin-right: auto;
+}
