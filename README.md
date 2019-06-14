@@ -14,4 +14,6 @@ In the `.php` files you will have to change the username, password, database and
 
 To run a php server use the command `php -S localhost:8000`
 
-Then type `localhost:8000/Website/main.html` on your web browser to run the Website
+Then type `localhost:8000/Website/main.html` on your web browser to run the 
+
+HUEHUEHUEHUEHUE
